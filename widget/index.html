@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./css/api.css"/>
     <link rel="stylesheet" type="text/css" href="./css/style.css"/>
     <style>
-        header {
+        /*header {
             background-color: #f2f2f2;
         }
 
@@ -25,7 +25,7 @@
 
         header ul li.active {
             display: block;
-        }
+        }*/
 
         #footer {
             background-color: #f2f2f2;
@@ -91,7 +91,8 @@
 </head>
 <body>
 <div id="wrap" class="flex-wrap flex-vertical">
-    <header id="header">
+
+    <!-- <header id="header">
         <ul>
             <li class="border-b active">荔枝商城</li>
             <li class="border-b">荔枝商城</li>
@@ -99,7 +100,8 @@
             <li class="border-b">荔枝商城</li>
             <li class="border-b">荔枝商城</li>
         </ul>
-    </header>
+    </header> -->
+
     <div id="main" class="flex-con">
 
     </div>
@@ -125,7 +127,7 @@
         });
 
         //要减掉头部与尾部，默认加载主页
-        var headerH = $api.offset($api.dom('#header')).h;
+        var headerH = 0;
         var footerH = $api.offset($api.dom('#footer')).h;
         var frameH = api.winHeight - headerH - footerH;
         api.openFrame({
@@ -166,7 +168,8 @@
 
     function go_page(sign) {
         //要减掉头部与尾部
-        var headerH = $api.offset($api.dom('#header')).h;
+        // var headerH = $api.offset($api.dom('#header')).h;
+        var headerH =0;
         var footerH = $api.offset($api.dom('#footer')).h;
         var frameH = api.winHeight - headerH - footerH;
 
