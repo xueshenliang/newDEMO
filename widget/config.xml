@@ -5,8 +5,8 @@
     <content src="index.html"/>
     <access origin="*"/>
     <preference name="pageBounce" value="false"/>
-    <preference name="appBackground" value="#3e4245"/>
-    <preference name="windowBackground" value="#3e4245"/>
+    <preference name="appBackground" value="#FFF"/>
+    <preference name="windowBackground" value="#FFF"/>
     <preference name="frameBackgroundColor" value="rgba(0,0,0,0.0)"/>
     <preference name="hScrollBarEnabled" value="false"/>
     <preference name="vScrollBarEnabled" value="false"/>
