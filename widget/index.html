@@ -121,9 +121,11 @@
 <script type="text/javascript">
     apiready = function () {
         $api.fixStatusBar($api.dom('header'));
+        
+        //设置导航栏颜色
         api.setStatusBarStyle({
             style: 'dark',
-            color: '#6ab494'
+            color: '#d9d9d9'
         });
 
         //要减掉头部与尾部，默认加载主页

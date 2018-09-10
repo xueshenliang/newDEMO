@@ -5,6 +5,7 @@
     height: 50px;
     z-index: 999;
     background-color: #ffffff;
+    border-bottom: 1px solid #d9d9d9;
 }
 
 .header .left {
