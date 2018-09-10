@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/main_p.css"/>
+
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/min.js"></script>
+    <script type="text/javascript" src="../script/jq.min.js"></script>
+    <script type="text/javascript" src="../script/vue.min.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <!--搜索框-->
+    <div class="search" onclick="go_search();">
+        <div class="img"></div>
+        <div class="desc">
+            <span class="txt">商品搜索, 共21款好物</span>
+        </div>
+    </div>
+
+    <div class="mui-slider" style="margin-top: 5px;">
+        <div class="mui-slider-group">
+            <div class="mui-slider-item" v-for="item in list">
+                <a href="#" @click="go_detail(1,item.action)">
+                    <img v-bind:src="item.photo"/>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="m-menu">
+
+        <div class="item" v-for="item in category" @click="go_listdetail(1,item.id);">
+            <img v-bind:src="item.bz_1" alt=""/>
+            <span>
+            {{item.name}}
+            </span>
+        </div>
+
+        <div class="item" onclick="go_listdetail();">
+            <img src="../image/more.png" alt=""/>
+        <span>
+        更多
+        </span>
+        </div>
+    </div>
+
+
+    <div class="cont">
+        <div class="a-section a-quan" onclick="go_quan()">
+            <div class="quan">
+                <img src="../image/quan.jpg">
+            </div>
+        </div>
+
+        <!--品牌制造商直供-->
+        <div>
+            <div class="h">
+                <div>
+                    <span class="txt">品牌制造商直供</span>
+                </div>
+            </div>
+
+            <div class="sublist">
+                <div class="wrap" v-for="item in brand" @click="go_listdetail(2,item.id)">
+                    <img class="img" v-bind:src="item.photo"/>
+
+                    <div class="mt">
+                        <span class="brand">{{item.name}}</span>
+                        <span class="price">{{item.brandprice}}</span>
+                        <span class="unit">元起</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--新品首发-->
+        <div class="a-section a-quan" onclick="go_quan()">
+            <div class="quan">
+                <img src="../image/f1.png">
+            </div>
+        </div>
+
+        <div class="h">
+            <div>
+                <span class="txt">周一周四·新品首发</span>
+            </div>
+        </div>
+
+        <div class="b">
+
+            <div class="goodlist" v-for="item in newGoods" @click="go_detail(2,item.id)">
+                <img class="img" v-bind:src="item.photo_x">
+
+                <div class="mt">
+                    <span class="name">{{item.name}}</span>
+                <span class="price">
+                       ￥{{item.price_yh}}
+                </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!--人气推荐-->
+        <div class="a-section a-quan" onclick="go_quan()">
+            <div class="quan">
+                <img src="../image/quan.jpg">
+            </div>
+        </div>
+
+        <div class="h">
+            <div>
+                <span class="txt">人气推荐</span>
+            </div>
+        </div>
+
+
+        <div class="a-popular">
+            <div class="item" v-for="item in hotGoods" @click="go_detail(2,item.id)">
+                <div class="img">
+                    <img v-bind:src="item.photo_x">
+                </div>
+                <div class="right">
+                    <div class="name">
+                        {{item.name}}
+                    </div>
+                    <div class="desc">
+                        {{item.intro}}
+                    </div>
+                    <div class="price">
+                        ￥{{item.price_yh}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--专题精选-->
+        <div class="a-section a-quan" onclick="go_quan()">
+            <div class="quan">
+                <img src="../image/quan.jpg">
+            </div>
+        </div>
+
+        <div class="h">
+            <div>
+                <span class="txt">专题精选</span>
+            </div>
+        </div>
+
+        <!--滚动-->
+        <div class="slide-box">
+            <div class="slide-item" v-for="item in hotGoods" @click="go_detail(2,item.id)">
+                <img v-bind:src="item.photo_x">
+
+                <div class="np">
+                    <span class="name" style="font-size: 16px;">
+                     {{item.name}}
+                    </span>
+                    <span style="color: red;">
+                      ￥{{item.price_yh}}元起
+                    </span>
+                </div>
+                <div class="desc">
+                 <span style="color: #ccc;">
+                    {{item.intro}}
+                </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--专题精选-->
+        <div class="a-section a-quan" onclick="go_quan()">
+            <div class="quan">
+                <img src="../image/quan.jpg">
+            </div>
+        </div>
+
+        <div class="h">
+            <div>
+                <span class="txt">更多好物</span>
+            </div>
+        </div>
+
+        <div class="b">
+            <div class="goodlist" v-for="item in hotGoods" @click="go_detail(2,item.id)">
+                <img class="img" v-bind:src="item.photo_x">
+
+                <div class="mt">
+                    <span class="name">{{item.name}}</span>
+                <span class="price">
+                       ￥{{item.price_yh}}
+                </span>
+                </div>
+            </div>
+
+            <div class="goodlist more" onclick="more()">
+            <span>
+                更多好物
+            </span>
+                <img class="img" style="width: 30px;" src="../image/icon_go_more.png">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+    function more() {
+        api.toast({
+            msg: '暂无更多产品',
+            duration: 2000,
+            location: 'bottom'
+        });
+    }
+    window.onload = function () {
+        mui.init({
+            swipeBack: true //启用右滑关闭功能
+        });
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval: 3000//自动轮播周期，若为0则不自动播放，默认为0；
+        })
+    };
+    var ceshiUrl = 'https://yanxuanshop.banband.net/index.php?s=';
+
+    var data_list = "";
+    (function () {
+        vm = new Vue({
+            el: '#app',
+            data: {
+                list: [],
+                category: [],
+                brand: [],
+                newGoods: [],
+                hotGoods: []
+            }
+        });
+        getlist();
+    })();
+    function go_quan() {
+        api.openFrame({
+            name: 'rituall',
+            url: '../html/rituall.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+    function getlist() {
+        var url = ceshiUrl + '/Api/Index/index';
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url,
+            data: {},
+            success: function (data) {
+                vm.list = data.ggtop;
+                vm.category = data.category;
+                vm.brand = data.brand;
+                vm.newGoods = data.newGoods;
+                vm.hotGoods = data.hotGoods;
+//                vm.productData = data.productData;
+//                alert(JSON.stringify(data.ggtop));
+            }
+        });
+
+    }
+
+    //跳转详情页
+    function go_detail(sign, action) {
+        if (sign == 1) {
+            var index1 = action.lastIndexOf("=") + 1;
+            var index2 = action.length;
+            var id = action.substring(index1, index2); //后缀名
+        } else {
+            var id = action;
+        }
+
+        api.openFrame({
+            name: 'goods_detail',
+            url: '../html/goods_detail.html',
+            bounces: false,
+            pageParam: {id: id},
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+    });
+
+
+    //选择导航栏（变色）
+    function option_type(e) {
+        var p = e.parentElement; //获取父节点
+        var ele = p.children; //获取父节点下面所有子节点
+        var obj_class = e.className;
+        if (obj_class == 'new_option') {
+            e.className = "";
+            e.firstChild.style.color = '#4d4d4d';//改变颜色
+        } else {
+            e.className = 'new_option'; //添加新css属性
+            e.firstChild.style.color = '#ffffff';
+            for (var i = 0; i < ele.length; i++) {
+                var qt_ch = ele[i];
+                if (e != qt_ch) {
+                    qt_ch.className = "";
+                    qt_ch.firstChild.style.color = '#4d4d4d';
+                }
+            }
+        }
+    }
+    function go_search() {
+        api.openFrame({
+            name: 'search_page',
+            url: '../html/search.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+    function go() {
+        //要减掉头部与尾部
+        // var headerH = $api.offset($api.dom('#header')).h;
+        // var footerH = $api.offset($api.dom('#footer')).h;
+        // var frameH = api.winHeight - headerH - footerH;
+        api.openFrame({
+            name: 'goods',
+            url: '../html/goods_detail.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+    function go_listdetail(sign, id) {
+        api.openFrame({
+            name: 'listdetail',
+            url: '../html/listdetail.html',
+            bounces: false,
+            pageParam: {id: id, sign: sign},
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+    apiready = function () {
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>分类</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/categor.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/jq.min.js"></script>
+    <script type="text/javascript" src="../script/vue.min.js"></script>
+    <style>
+        .nav_active {
+            color: #ab2b2b !important;
+            font-size: 18px !important;
+            border-left: 3px solid #ab2b2b !important;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="search" onclick="go_search();">
+        <div class="input">
+            <div class="icon"></div>
+                <span class="txt">
+                商品搜索, 共21款好物
+                </span>
+        </div>
+    </div>
+    <div class="catalog" id="app">
+        <div class="nav">
+            <div v-for="(item,index) in list" :class="{'item':true,'active':clicked==index}"
+                 @click="option_type(index,item.id)"
+                 id="aa{{item.id}}">
+                {{item.name}}
+            </div>
+        </div>
+
+
+        <div class="cate show">
+            <div class="banner" @click="go_listdetail(2,itemlist.id);">
+                <img class="img" v-bind:src="itemlist.bz_2">
+
+                <div class="txt">{{itemlist.concent}}</div>
+            </div>
+            <div class="hd">
+                <span class="line"></span>
+                    <span class="txt">
+                    {{itemlist.name}}分类
+                    </span>
+                <span class="line"></span>
+            </div>
+            <div class="bd">
+                <div class="item" v-for="(item,index) in typeTree" @click="go_listdetail(2,item.id);">
+                    <img class="icon"
+                         v-bind:src="item.bz_1">
+                        <span class="txt">
+                        {{item.name}}
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+
+    var ceshiUrl = 'https://yanxuanshop.banband.net/index.php?s=';
+    (function () {
+        vm = new Vue({
+            el: '#app',
+            data: {
+                list: [],
+                clicked: 0,
+                currType: 0,
+                itemlist: [],
+                typeTree: []
+            }
+        });
+        getlist();
+    })();
+
+    function getlist() {
+        var url = ceshiUrl + '/Api/Category/index';
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url,
+            data: {},
+            success: function (data) {
+                vm.list = data.list;
+                vm.itemlist = vm.list[0];
+                vm.typeTree = data.catList;
+            }
+        });
+    }
+
+    function go_listdetail(sign, id) {
+        api.openFrame({
+            name: 'listdetail',
+            url: '../html/listdetail.html',
+            bounces: false,
+            pageParam: {id: id, sign: sign},
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+
+    function go_search() {
+        api.openFrame({
+            name: 'search_page',
+            url: '../html/search.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+    //选择导航栏（变色)
+    function option_type(index, id) {
+        /* var p = e.target.parentElement; //获取父节点
+         var ele = p.children; //获取父节点下面所有子节点
+         var obj_class = e.classList;
+         e.classList.add("nav_active"); //移除类
+         for (var i = 0; i < ele.length; i++) {
+         var qt_ch = ele[i];
+         if (e != qt_ch) {
+         qt_ch.classList.remove("nav_active"); //移除类
+         }
+         }*/
+
+        vm.itemlist = vm.list[index];
+        $.ajax({
+            url: ceshiUrl + '/Api/Category/getcat',
+            method: 'post',
+            dataType: "json",
+            data: {cat_id: id},
+            success: function (res) {
+                vm.typeTree = res.catList;
+                vm.clicked = index
+            }
+        });
+
+    }
+</script>
+</html>

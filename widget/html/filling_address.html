@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>添加地址</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/filling_address.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+</head>
+<body onresize="change_windos()">
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">添加地址</span>
+    </div>
+</div>
+
+<div class="container">
+    <input name="name" placeholder="收货人姓名" type="text">
+    <input name="name" placeholder="电话号码" type="text">
+
+    <div>
+        <span>选择省份：</span>
+        <select name="" id="province">
+            <option value="0">
+                请选择省份
+            </option>
+            <option value="0">
+                北京
+            </option>
+            <option value="0">
+                上海
+            </option>
+        </select>
+    </div>
+    <div>
+        <span>选择城市：</span>
+        <select name="" id="city">
+            <option value="0">
+                请选择城市
+            </option>
+            <option value="0">
+                海淀区
+            </option>
+        </select>
+    </div>
+    <div>
+        <span>选择地区：</span>
+        <select name="" id="">
+            <option value="0">
+                请选择地区
+            </option>
+        </select>
+    </div>
+    <input name="name" placeholder="详细地址" type="text">
+</div>
+
+<div class="btn-area" id="btn-area">
+    <button form-type="submit" class="button-hover">保存地址</button>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+    var windheight = window.innerHeight;
+    function change_windos() {
+        var bottomx = document.getElementById('btn-area'); //底部导航
+        var docheight = window.innerHeight;
+        if (docheight < windheight) {
+            bottomx.style.display = 'none';
+        } else {
+            bottomx.style.display = 'flex';
+        }
+    }
+
+
+    function goback() {
+        api.closeFrame({name: 'filling_address'});
+    }
+</script>
+</html>

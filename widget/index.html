@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>底部导航</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <style>
+        header {
+            background-color: #f2f2f2;
+        }
+
+        header ul li {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: none;
+            color: #323237;
+            position: relative;
+            font-size: 18px;
+        }
+
+        header ul li.active {
+            display: block;
+        }
+
+        #footer {
+            background-color: #f2f2f2;
+        }
+
+        #footer ul li {
+            padding-top: 36px;
+            padding-bottom: 4px;
+            background: url() no-repeat center 2px;
+            background-size: auto 30px;
+            text-align: center;
+        }
+
+        #footer ul li.active {
+            color: #6ab494;
+        }
+
+        #footer ul li:nth-child(1) {
+            background-image: url(./image/bottombtn0101.png);
+        }
+
+        #footer ul li:nth-child(2) {
+            background-image: url(./image/bottombtn0201.png);
+        }
+
+        #footer ul li:nth-child(3) {
+            background-image: url(./image/bottombtn0301.png);
+        }
+
+        #footer ul li:nth-child(4) {
+            background-image: url(./image/bottombtn0401.png);
+        }
+
+        #footer ul li:nth-child(5) {
+            background-image: url(./image/bottombtn0501.png);
+        }
+
+        #footer ul li:nth-child(1).active {
+            background-image: url(./image/bottombtn0102.png);
+        }
+
+        #footer ul li:nth-child(2).active {
+            background-image: url(./image/bottombtn0202.png);
+        }
+
+        #footer ul li:nth-child(3).active {
+            background-image: url(./image/bottombtn0302.png);
+        }
+
+        #footer ul li:nth-child(4).active {
+            background-image: url(./image/bottombtn0402.png);
+        }
+
+        #footer ul li:nth-child(5).active {
+            background-image: url(./image/bottombtn0502.png);
+        }
+
+        .flex-con {
+            overflow: auto
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap" class="flex-wrap flex-vertical">
+    <header id="header">
+        <ul>
+            <li class="border-b active">荔枝商城</li>
+            <li class="border-b">荔枝商城</li>
+            <li class="border-b">荔枝商城</li>
+            <li class="border-b">荔枝商城</li>
+            <li class="border-b">荔枝商城</li>
+        </ul>
+    </header>
+    <div id="main" class="flex-con">
+
+    </div>
+    <div id="footer" class="border-t">
+        <ul class="flex-wrap">
+            <li tapmode="hover" onclick="randomSwitchBtn(this,1);" class="flex-con active">首页</li>
+            <li tapmode="hover" onclick="randomSwitchBtn(this,2);" class="flex-con">专题</li>
+            <li tapmode="hover" onclick="randomSwitchBtn(this,3);" class="flex-con">分类</li>
+            <li tapmode="hover" onclick="randomSwitchBtn(this,4);" class="flex-con">购物车</li>
+            <li tapmode="hover" onclick="randomSwitchBtn(this,5);" class="flex-con">我的</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript">
+    apiready = function () {
+        $api.fixStatusBar($api.dom('header'));
+        api.setStatusBarStyle({
+            style: 'dark',
+            color: '#6ab494'
+        });
+
+        //要减掉头部与尾部，默认加载主页
+        var headerH = $api.offset($api.dom('#header')).h;
+        var footerH = $api.offset($api.dom('#footer')).h;
+        var frameH = api.winHeight - headerH - footerH;
+        api.openFrame({
+            name: 'main',
+            url: './html/main.html',
+            bounces: true,  //上下滑动
+            scrollEnabled: true,
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                h: frameH
+            }
+        });
+    }
+    // 随意切换按钮
+    function randomSwitchBtn(tag, sign) {
+        if (tag == $api.dom('#footer li.active'))return;
+        var eFootLis = $api.domAll('#footer li'),
+                eHeaderLis = $api.domAll('header li'),
+                index = 0;
+        for (var i = 0, len = eFootLis.length; i < len; i++) {
+            if (tag == eFootLis[i]) {
+                index = i;
+            } else {
+                $api.removeCls(eFootLis[i], 'active');
+                $api.removeCls(eHeaderLis[i], 'active');
+            }
+        }
+        $api.addCls(eFootLis[index], 'active');
+        $api.addCls(eHeaderLis[index], 'active');
+        api.setFrameGroupIndex({
+            name: 'group',
+            index: index
+        });
+        go_page(sign);
+    }
+
+    function go_page(sign) {
+        //要减掉头部与尾部
+        var headerH = $api.offset($api.dom('#header')).h;
+        var footerH = $api.offset($api.dom('#footer')).h;
+        var frameH = api.winHeight - headerH - footerH;
+
+        if (sign == 1) {
+            api.closeFrame({name: 'categor'});
+            api.closeFrame({name: 'special'});
+            api.closeFrame({name: 'cart'});
+            api.closeFrame({name: 'user'});
+            api.openFrame({
+                name: 'main',
+                url: './html/main.html',
+                bounces: true,
+                rect: {
+                    x: 0,
+                    y: headerH,
+                    w: 'auto',
+                    h: frameH
+                }
+            });
+        } else if (sign == 2) {
+            api.closeFrame({name: 'main'});
+            api.closeFrame({name: 'categor'});
+            api.closeFrame({name: 'cart'});
+            api.closeFrame({name: 'user'});
+            api.openFrame({
+                name: 'special',
+                url: './html/special.html',
+                bounces: true,
+                rect: {
+                    x: 0,
+                    y: headerH,
+                    w: 'auto',
+                    h: frameH
+                }
+            });
+        } else if (sign == 3) {
+            api.closeFrame({name: 'main'});
+            api.closeFrame({name: 'special'});
+            api.closeFrame({name: 'cart'});
+            api.closeFrame({name: 'user'});
+            api.openFrame({
+                name: 'categor',
+                url: './html/categor.html',
+                bounces: true,
+                rect: {
+                    x: 0,
+                    y: headerH,
+                    w: 'auto',
+                    h: frameH
+                }
+            });
+        } else if (sign == 4) {
+            api.closeFrame({name: 'main'});
+            api.closeFrame({name: 'special'});
+            api.closeFrame({name: 'categor'});
+            api.closeFrame({name: 'user'});
+            api.openFrame({
+                name: 'cart',
+                url: './html/cart.html',
+                bounces: true,
+                rect: {
+                    x: 0,
+                    y: headerH,
+                    w: 'auto',
+                    h: frameH
+                }
+            });
+        } else if (sign == 5) {
+            api.closeFrame({name: 'main'});
+            api.closeFrame({name: 'special'});
+            api.closeFrame({name: 'categor'});
+            api.closeFrame({name: 'cart'});
+            api.openFrame({
+                name: 'user',
+                url: './html/user.html',
+                bounces: true,
+                rect: {
+                    x: 0,
+                    y: headerH,
+                    w: 'auto',
+                    h: frameH
+                }
+            });
+        }
+    }
+</script>

@@ -1,0 +1,245 @@
+body {
+    background: #ffffff;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 4px solid #ffffff;
+    border-radius: 8px;
+    margin: 5px;
+    background: #ededed;
+}
+
+.search .img {
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png) center no-repeat;
+    background-size: 100%;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
+
+.empty {
+    text-align: center;
+    padding: 120px 0;
+}
+
+.new_option {
+    background: #619be9;
+    color: #ffffff;
+}
+
+.a-section {
+    height: auto;
+    /*overflow: hidden;*/
+    background: #fff;
+    color: #333;
+    margin-top: 1px;
+}
+
+.quan img {
+    width: 100%;
+    height: 125px;
+}
+
+.h {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+}
+
+.h .txt {
+    padding-right: 15px;
+    background: url("http://ac-3yr0g9cz.clouddn.com/2cdba05369e10f934e54.png") right 2px no-repeat;
+    background-size: 8px 13px;
+    display: inline-block;
+    height: 18px;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.sublist {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sublist .wrap {
+    margin: -1px auto;
+    position: relative;
+    width: 49%;
+}
+
+.sublist .wrap .img {
+    width: 100%;
+    height: 126px;
+}
+
+.wrap .mt {
+    position: absolute;
+    z-index: 2;
+    padding: 13px 15px;
+    left: 0;
+    top: 0;
+}
+
+.wrap .mt .brand {
+    display: block;
+    font-size: 16px;
+    height: 21px;
+    color: #333;
+}
+
+.wrap .mt .price, .wrap .mt .unit {
+    font-size: 12px;
+    color: #999;
+}
+
+.m-menu {
+    display: flex;
+    height: 98px;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.m-menu .item {
+    flex: 1;
+    display: block;
+    padding: 2px 0;
+}
+
+.m-menu .item img {
+    display: block;
+    width: 29px;
+    height: 29px;
+    margin: 0 auto;
+    margin-bottom: 6px;
+}
+
+.m-menu span {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1;
+    color: #333;
+}
+
+.b {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.b .goodlist {
+    width: 49%;
+    background: #ffffff;
+}
+
+.b .goodlist img {
+    width: 100%;
+}
+
+.b .goodlist .mt {
+    text-align: center;
+}
+
+.b .goodlist .mt .price {
+    color: red;
+}
+
+.a-popular .item {
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+
+.a-popular .item .img {
+    float: left;
+    width: 40%;
+}
+
+.a-popular .item .img img {
+    width: 100%;
+}
+
+.a-popular .item .right {
+    float: right;
+    text-align: center;
+    margin: 0 auto;
+    width: 58%;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -60%);
+}
+
+.a-popular .item .right .price {
+    display: block;
+    color: #b4282d;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+.a-popular .item .right .desc {
+    display: block;
+    color: #999;
+    line-height: 25px;
+    font-size: 13px;
+}
+
+.a-popular .item .right .name {
+    font-size: 18px;
+}
+
+.slide-box {
+    display: -webkit-box;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.slide-item {
+    width: 375px;
+    white-space: nowrap;
+    margin-right: 30px;
+}
+
+.slide-item img {
+    height: 195px;
+    width: 340px;
+    margin-bottom: 7px;
+}
+
+.slide-item .np {
+    text-align: center;
+}
+
+.slide-item .price {
+    text-align: center;
+}
+
+.slide-item .desc {
+    text-align: center;
+}
+
+.more {
+    background: #ffffff;
+    height: 184px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.more .img {
+    margin: 20px auto 0 auto;
+    width: 30px;
+    height: 30px;
+}
+

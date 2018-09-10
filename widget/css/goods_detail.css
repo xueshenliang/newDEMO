@@ -1,0 +1,311 @@
+.goods-info {
+    position: relative;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.goods-white {
+    /* margin-top: 10px; */
+    background-color: #fff;
+    height: 30%;
+    margin: 5px 0;
+}
+
+.image-text image {
+    /*width: 390px;*/
+    height: 490px;
+    border: 0 none;
+    vertical-align: top;
+    display: block;
+}
+
+.image-text .cont {
+    background: #ffffff;
+    text-indent: 1em;
+}
+
+.goods-info .goods-name {
+    padding: 0 15px;
+    font-size: 18px;
+    height: auto;
+    color: #343434;
+    line-height: 22px;
+    text-align: center;
+}
+
+.goods-info .tuan_goods_cx {
+    padding: 6px 0 4px;
+    line-height: 15px;
+    font-size: 13px;
+}
+
+.goods-info .tuan_goods_cx .span {
+    padding-right: 4px;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    color: #666;
+}
+
+.goods-info .goods_price {
+    margin-top: 10px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.goods-info .goods_price .red {
+    color: #E7414D;
+    font-size: 22px;
+}
+
+.goods-info .goods_price .red .span {
+    font-size: 14px;
+    padding-right: 1px;
+}
+
+.goods-info .goods_price .grey-padding, .goods-info .goods_price .red-padding {
+    padding-left: 1px;
+}
+
+.goods-info .goods_price .price-spec {
+    color: #626262;
+    font-size: 12px;
+}
+
+.goods-info .goods_price .price-spec .span {
+    font-size: 18px;
+}
+
+.goods-info .goods_price .grey {
+    color: #878787;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.goods-info .goods_price .grey-padding, .goods-info .goods_price .red-padding {
+    padding-left: 1px;
+}
+
+.goods-info .goods_price .market-price {
+    color: #878787;
+    font-size: 10px;
+}
+
+.goods-info .goods-sold {
+    color: #878787;
+    font-size: 12px;
+    text-align: center;
+}
+
+.rule-intro {
+    color: #878787;
+    font-size: 12px;
+    text-align: center;
+}
+
+.text-title {
+    width: 94%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 15px;
+    color: #343434;
+    text-align: left;
+    border-bottom: 1px solid #F7F7F7;
+    padding: 0 3%;
+    margin-bottom: 10px;
+}
+
+.goods-info .goods-sold {
+    margin-top: 12px;
+    margin-bottom: 9px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.goods-home {
+    display: inline-block;
+    background: #ffffff;
+    background-position: center center;
+    background-image: url(../image/kefu.png);
+    background-repeat: no-repeat;
+    background-size: 26px auto;
+    height: 100%;
+    margin: auto;
+    width: 20%;
+}
+
+.goods-shouzan {
+    display: inline-block;
+    background: #ffffff;
+    background-position: center center;
+    background-image: url(../image/shced.png);
+    background-repeat: no-repeat;
+    background-size: 26px auto;
+    height: 100%;
+    margin: auto;
+    width: 20%;
+}
+
+.ft_nav {
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.ft_nav .bug-price {
+    color: #ffffff;
+    display: inline-block;
+    background-color: #FD9327;
+    opacity:1;
+    text-align: center;
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+}
+
+
+.ft_nav .pj {
+    background-color: #b4282d;
+    opacity:1;
+}
+
+.ft_nav .small {
+    font-size: 16px;
+}
+
+.cont {
+    height: calc(100% - 100px);
+}
+
+.service-policy {
+    height: 35px;
+    background: #f4f4f4;
+    padding: 0 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service-policy .item {
+    background: url(http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/servicePolicyRed-518d32d74b.png) 0 center no-repeat;
+    background-size: 5px;
+    padding-left: 7px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.goods-white .desc {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.goods-info .brand {
+    margin-top: 12px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.goods-info .brand span {
+    display: inline-block;
+    width: auto;
+    padding: 2px 15px 2px 5px;
+    line-height: 17px;
+    border: 1px solid #f48f18;
+    font-size: 13px;
+    color: #f48f18;
+    border-radius: 4px;
+    background: url(http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/detailTagArrow-18bee52dab.png) 95% center no-repeat;
+    background-size: 5px 9px;
+}
+
+.common-problem {
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.common-problem .h {
+    position: relative;
+    height: 70px;
+    padding: 25px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.common-problem .h .line {
+    display: inline-block;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 2;
+    height: 1px;
+    margin-left: 29%;
+    width:50%;
+    background: #ccc;
+}
+
+.common-problem .h .title {
+    display: inline-block;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    z-index: 3;
+    height: 12px;
+    margin-left: 40%;
+    width: 90px;
+    background: #fff;
+}
+
+.common-problem .b {
+    height: auto;
+    overflow: hidden;
+    padding: 0px 15px;
+    background: #fff;
+
+}
+
+.common-problem .item {
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 12px;
+}
+
+.common-problem .question-box .spot {
+    float: left;
+    display: block;
+    height: 4px;
+    width: 4px;
+    background: #b4282d;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.common-problem .question-box .question {
+    float: left;
+    line-height: 15px;
+    padding-left: 4px;
+    display: block;
+    font-size: 13px;
+    padding-bottom: 8px;
+    color: #303030;
+}
+
+.common-problem .answer {
+    clear: both;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: justify;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-indent: 2em;
+    font-size: 13px;
+    color: #787878;
+}

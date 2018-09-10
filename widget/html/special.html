@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>专题</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/special.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/jq.min.js"></script>
+    <script type="text/javascript" src="../script/vue.min.js"></script>
+</head>
+<body>
+
+<div class="container" id="app">
+
+    <div class="topic-list">
+        <div class="item" v-for="item in list" @click="go_listdetail(2,item.id)">
+            <img class="img" v-bind:src="item.photo">
+
+            <div class="info">
+                <span class="title">
+                {{item.name}}
+                </span>
+                <span class="desc">
+               {{item.subtitle}}
+                </span>
+                <span class="price">
+               {{item.price_info}}元起
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var ceshiUrl = 'https://yanxuanshop.banband.net/index.php?s=';
+    (function () {
+        vm = new Vue({
+            el: '#app',
+            data: {
+                list: []
+            }
+        });
+        getlist();
+    })();
+    function getlist() {
+        var url = ceshiUrl + '/Api/Zhuti/index';
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url,
+            data: {},
+            success: function (data) {
+                vm.list = data.topiclist;
+//                vm.productData = data.productData;
+//                alert(JSON.stringify(data.ggtop));
+            }
+        });
+
+    }
+    function go_listdetail(sign, id) {
+        api.openFrame({
+            name: 'listdetail',
+            url: '../html/listdetail.html',
+            bounces: false,
+            pageParam: {id: id, sign: sign},
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+</script>
+</html>

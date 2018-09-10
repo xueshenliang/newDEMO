@@ -1,0 +1,153 @@
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    /*background-color: #ffffff;*/
+    /*height: calc(100% - 50px);*/
+    padding-top: 50px;
+}
+
+.sort {
+    position: fixed;
+    top: 45px;
+    background: #fff;
+    width: 100%;
+    height: 39px;
+}
+
+.sort-box {
+    background: #fff;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    margin-top: 7px;
+    display: flex;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.sort-box .item {
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    flex: 1;
+    color: #333;
+    font-size: 15px;
+}
+
+.sort-box .item .txt {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.sort-box .item.active .txt {
+    color: #b4282d;
+}
+
+.sort-box .item.by-price {
+    background: url(//yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/no-3127092a69.png) 76px center no-repeat;
+    background-size: 7px 10px;
+}
+
+.sort-box .item.by-price.active.asc {
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/up-636b92c0a5.png) 76px center no-repeat;
+    background-size: 7px 10px;
+}
+
+.sort-box .item.by-price.active.desc {
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/down-95e035f3e5.png) 76px center no-repeat;
+    background-size: 7px 10px;
+}
+
+.sort-box-category {
+    background: #fff;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 20px 0 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.sort-box-category .item {
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    float: left;
+    padding: 0 8px;
+    /*margin: 0 0 20px 20px;*/
+    border: 1px solid #666;
+    color: #333;
+    font-size: 12px;
+}
+
+.sort-box-category .item.active {
+    color: #b4282d;
+    border: 1px solid #b4282d;
+}
+
+.service-policy {
+    width: 375px;
+    height: 36px;
+    padding: 0 16px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service-policy .item {
+    background: url(http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/servicePolicyRed-518d32d74b.png) 0 center no-repeat;
+    background-size: 5px;
+    padding-left: 7px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.bx {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bx .goodlist {
+    width: 47%;
+    background: #ffffff;
+    margin: 5px;
+}
+
+.bx .goodlist img {
+    width: 100%;
+}
+
+.b .goodlist .mt .name{
+    text-align: center;
+}
+
+.bx .goodlist .mt .price {
+    color: red;
+}
+
+.search-result-empty {
+    width: 100%;
+    height: 100%;
+    padding-top: 150px;
+}
+
+.search-result-empty .icon {
+    margin: 0 auto;
+    display: block;
+    width: 120px;
+    height: 120px;
+}
+
+.search-result-empty .text {
+    display: block;
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: #999;
+}

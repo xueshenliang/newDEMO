@@ -1,0 +1,239 @@
+html, body {
+    font-size: 14px;
+    height: 100%;
+}
+
+.hover {
+    opacity: .8;
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-con {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+}
+
+.border-t,
+.border-b {
+    position: relative;
+}
+
+.border-t:before,
+.border-b:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ddd;
+    right: 0;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.border-b:after {
+    top: auto;
+    bottom: 0;
+}
+
+.mas {
+    background: #009933;
+    color: white;
+}
+
+#wrap {
+    height: 100%;
+}
+
+.nav_herad {
+    width: 100%;
+    position: fixed;
+    top: 2px;
+    left: 0;
+    z-index: 999;
+}
+
+.nav {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 35px;
+    position: relative;
+    line-height: 35px;
+}
+
+.nav ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 640px;
+    z-index: 1;
+}
+
+.nav ul li {
+    width: 50px !important;
+    float: left;
+    overflow: hidden;
+}
+
+.nav a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+}
+
+.goods_list {
+    /* margin: 0 1px; */
+    overflow: hidden;
+}
+
+.tuan-new .label-orange-hot {
+    line-height: 35px;
+    background: url(https://91364949.qcloud.la/images/label-orange-hot.png);
+    background-size: 42px 60px;
+}
+
+.tuan-new .goods-tag {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    width: 42px;
+    height: 60px;
+    /*line-height: 55px;*/
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: PingFang;
+}
+
+.tuan-new .tuan_goods_info {
+    padding: 9px 11px;
+}
+
+.div {
+    margin: auto;
+    max-width: 640px
+}
+
+.tuan_g_img {
+    display: block;
+    position: relative;
+}
+
+.tuan_g_img .img {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    padding: 3% 3% 0 3%;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_name {
+    font-size: 15px;
+    color: #333;
+    height: 21.6px;
+    line-height: 18.88px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    vertical-align: middle;
+    padding: 0 1.6px;
+    word-break: break-all;
+    white-space: normal;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    text-overflow: clip;
+    word-wrap: break-word;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_cx {
+    padding: 6px 0 4px;
+    line-height: 15px;
+    font-size: 13px;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_cx .span {
+    padding-right: 4px;
+}
+
+.tuan-new .tuan_goods_core {
+    padding: 0 11px 12px;
+}
+
+.group-desc {
+    color: #9c9c9c;
+    font-size: 14px;
+    position: relative;
+    top: -1px;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_btn {
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background-color: #FF6600;
+    border-radius: 3px;
+    width: 75px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_btn ::after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 5px;
+    height: 8px;
+    background: url("https://91364949.qcloud.la/images/groups_op.png") no-repeat;
+    background-size: 5px 8px;
+    margin-left: 2px;
+    top: -1px;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_btn .tmp {
+    padding: 0 5px;
+    background: url(https://91364949.qcloud.la/images/tuan_goods_core.png) no-repeat 50%;
+    background-size: 1px auto;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price {
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .red {
+    font-size: 19.2px;
+    color: #E7414D;
+    margin-right: .06rem;
+    font-weight: 700;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .divide {
+    color: #878787;
+    font-size: 16px;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .spec {
+    color: #878787;
+    font-size: 13px;
+}

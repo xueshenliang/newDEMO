@@ -1,0 +1,56 @@
+.container {
+    padding-top: 50px;
+}
+
+.address {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.address-icon {
+    width: 50px;
+}
+
+.address-detail {
+    width: 295px;
+}
+
+.address-name-phone {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.address-name {
+    margin-right: 10px;
+}
+
+.address-info {
+    margin-bottom: 15px;
+}
+
+.address-edit {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px #efeff4 solid;
+    padding-top: 15px;
+}
+
+.add-address {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 9px;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.add-address-icon {
+    height: 20px;
+    width: 20px;
+}

@@ -1,0 +1,255 @@
+body {
+    height: 100%;
+    width: 100%;
+    background: #f4f4f4;
+}
+
+.order-info {
+    padding-top: 13px;
+    background: #fff;
+    height: auto;
+    overflow: hidden;
+}
+
+.item-a {
+    padding-left: 16px;
+    height: 21px;
+    padding-bottom: 6px;
+    line-height: 15px;
+    font-size: 15px;
+    color: #666;
+}
+
+.item-b {
+    padding-left: 16px;
+    height: 15px;
+    line-height: 15px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #666;
+}
+
+.item-c {
+    margin-left: 16px;
+    border-top: 1px solid #f4f4f4;
+    height: 52px;
+    line-height: 52px;
+}
+
+.item-c .l {
+    float: left;
+}
+
+.item-c .r {
+    height: 51px;
+    float: right;
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+}
+
+.item-c .r .btn {
+    float: right;
+}
+
+.item-c .cost {
+    color: #b4282d;
+}
+
+.item-c .btn {
+    line-height: 33px;
+    border-radius: 3px;
+    text-align: center;
+    margin: 0 7px;
+    padding: 0 10px;
+    height: 33px;
+}
+
+.item-c .btn.active {
+    background: #b4282d;
+    color: #fff;
+}
+
+.order-goods {
+    margin-top: 10px;
+    background: #fff;
+}
+
+.order-goods .h {
+    height: 46px;
+    line-height: 46px;
+    margin-left: 15px;
+    border-bottom: 1px solid #f4f4f4;
+    padding-right: 16px;
+}
+
+.order-goods .h .label {
+    float: left;
+    font-size: 15px;
+    color: #333;
+}
+
+.order-goods .h .status {
+    float: right;
+    font-size: 15px;
+    color: #b4282d;
+}
+
+.order-goods .item {
+    display: flex;
+    align-items: center;
+    height: 95px;
+    margin-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.order-goods .item:last-child {
+    border-bottom: none;
+}
+
+.order-goods .item .img {
+    height: 72px;
+    width: 72px;
+    background: #f4f4f4;
+}
+
+.order-goods .item .img img {
+    height: 72px;
+    width: 72px;
+}
+
+.order-goods .item .info {
+    flex: 1;
+    height: 72px;
+    margin-left: 10px;
+}
+
+.order-goods .item .t {
+    margin-top: 4px;
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 5px;
+}
+
+.order-goods .item .t .name {
+    display: block;
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    color: #333;
+    font-size: 15px;
+}
+
+.order-goods .item .t .number {
+    display: block;
+    float: right;
+    height: 16px;
+    text-align: right;
+    line-height: 16px;
+    color: #333;
+    font-size: 15px;
+}
+
+.order-goods .item .attr {
+    height: 15px;
+    line-height: 15px;
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.order-goods .item .price {
+    height: 15px;
+    line-height: 15px;
+    color: #333;
+    font-size: 15px;
+}
+
+.order-bottom {
+    margin-top: 10px;
+    padding-left: 16px;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+}
+
+.order-bottom .address {
+    height: 64px;
+    padding-top: 10px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.order-bottom .address .t {
+    height: 17px;
+    line-height: 17px;
+    margin-bottom: 4px;
+}
+
+.order-bottom .address .name {
+    display: inline-block;
+    height: 18px;
+    width: 70px;
+    line-height: 18px;
+    font-size: 13px;
+}
+
+.order-bottom .address .mobile {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    font-size: 13px;
+}
+
+.order-bottom .address .b {
+    height: 18px;
+    line-height: 18px;
+    font-size: 13px;
+}
+
+.order-bottom .total {
+    height: 53px;
+    padding-top: 10px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.order-bottom .total .t {
+    height: 13px;
+    line-height: 13px;
+    margin-bottom: 4px;
+    display: flex;
+}
+
+.order-bottom .total .label {
+    width: 70px;
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    font-size: 13px;
+}
+
+.order-bottom .total .txt {
+    flex: 1;
+    display: inline-block;
+    height: 17px;
+    line-height: 17px;
+    font-size: 14px;
+}
+
+.order-bottom .pay-fee {
+    height: 40px;
+    line-height: 40px;
+}
+
+.order-bottom .pay-fee .label {
+    display: inline-block;
+    width: 70px;
+    color: #b4282d;
+}
+
+.order-bottom .pay-fee .txt {
+    display: inline-block;
+    width: 70px;
+    color: #b4282d;
+}

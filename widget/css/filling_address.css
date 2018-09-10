@@ -1,0 +1,61 @@
+body {
+    background: #ffffff;
+}
+
+/* pages/address/address.wxss */
+
+.container {
+    padding-top: 50px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.container input {
+    padding-left: 5px;
+    border-radius: 5px;
+    width: 97%;
+    height: 40px;
+    margin: 10px 0;
+    border: 1px solid #f4f4f4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container div {
+    margin: 10px 0;
+    font-size: 14px;
+    background: #ffffff;
+}
+
+.container span {
+    width: 20%;
+    padding-left: 5px;
+}
+
+.container select {
+    background: #ffffff;
+    width: 76%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #f4f4f4;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 90%;
+    position: fixed;
+    bottom: 2%;
+    border: 1px solid #fc0;
+    border-radius: 5px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #fc0;
+}

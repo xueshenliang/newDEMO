@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>意见反馈</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/feedback.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/jq.min.js"></script>
+</head>
+<body style="background: #f4f4f4;overflow: hidden;">
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">意见反馈</span>
+    </div>
+</div>
+<div class="cont">
+    <div class="a">
+        <image src="../image/yhfk.jpg"></image>
+    </div>
+    <div class="a_b"></div>
+    <div class="a_c"></div>
+    <form bindsubmit="reg">
+        <div class="xing"><span>姓名：</span><input name="name" placeholder="请输入你的姓名"/></div>
+        <div class="xing"><span>手机：</span><input name="tel" placeholder="请输入你的手机号码"/></div>
+        <div class="xing"><span>反馈内容：</span><input name="message" placeholder-class='input-placeholder'
+                                                   placeholder="请留下您的反馈信息"/></div>
+        <div class="bnt">
+            <button class="but" onclick="sub()">提交反馈</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var windheight = window.innerHeight;
+        $api.css($api.dom('body'), 'height: ' + windheight + 'px;');
+    };
+
+    function goback() {
+        api.closeFrame({name: 'feedback'});
+    }
+
+    function sub() {
+        api.toast({
+            msg: '请填写相关信息',
+            duration: 2000,
+            location: 'bottom'
+        });
+    }
+</script>
+</html>

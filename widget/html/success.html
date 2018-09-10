@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>已完成订单</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/dingdan.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+</head>
+<body style="background: #f4f4f4;">
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">已完成订单</span>
+    </div>
+</div>
+
+<!--<div class="container">-->
+    <!--<div class="orders">-->
+        <!--<div class="order">-->
+            <!--<div class="h">-->
+                <!--<div class="l">订单编号：2018082010010051</div>-->
+                <!--<div class="r">升级款柔软保暖羽棉被</div>-->
+            <!--</div>-->
+            <!--<div class="goods">-->
+                <!--<div class="img"><img-->
+                        <!--src="https://yanxuanshop.banband.net/Data/UploadFiles/brand/20171209/1512792820795978.jpg">-->
+                <!--</div>-->
+                <!--<div class="info">-->
+                    <!--<span class="name">升级款柔软保暖羽棉被</span>-->
+
+                    <!--<span class="number">共2件商品X单价：¥ 2000 数量：X1</span>-->
+                <!--</div>-->
+                <!--<div class="status"></div>-->
+            <!--</div>-->
+            <!--<div class="b">-->
+                <!--<div class="l">实付：￥600</div>-->
+                <!--<div class="r">-->
+                    <!--<div url="../order/detail?orderId={{item.id}}" class="btn">订单详情</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+</body>
+<script type="text/javascript">
+    function goback() {
+        api.closeFrame({name: 'success'});
+    }
+</script>
+</html>

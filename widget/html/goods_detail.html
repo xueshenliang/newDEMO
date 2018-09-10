@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>附近新品秒杀</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/goods_detail.css"/>
+
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/min.js"></script>
+    <script type="text/javascript" src="../script/jq.min.js"></script>
+    <script type="text/javascript" src="../script/vue.min.js"></script>
+    <style>
+        .empty {
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        /* 头部导航样式 */
+        .swiper-slide img {
+            width: 100%;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">商品详情</span>
+    </div>
+</div>
+
+<!--内容区-->
+<div class="cont" id="cont">
+    <!--轮播主图-->
+    <div class="mui-slider">
+        <div class="mui-slider-group" v-for="item in banneritem">
+            <span>{{item}}</span>
+
+            <div class="mui-slider-item">
+                <a href="#"><img v-bind:src="item"/></a>
+            </div>
+        </div>
+    </div>
+    <div class="service-policy">
+        <div class="item">30天无忧退货</div>
+        <div class="item">48小时快速退款</div>
+        <div class="item">满88元免邮费</div>
+    </div>
+    <div class="goods-info goods-white div">
+        <div class="goods-name div">{{list.name}}</div>
+        <div class="goods-name desc">{{list.intro}}</div>
+        <div class="goods_price div">
+            <div class="red span">
+                <div class="red-padding span" style="font-size:18px;">￥{{list.price_yh}}
+                </div>
+            </div>
+            <div class="brand" onclick="go_listdetail();">
+                <span>
+                     更多
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+    <div style="background-color:#EDEDED;height:10px;"></div>
+    <div class="image-text goods-white">
+        <div class="text-title">
+            商品参数
+        </div>
+        <div class="cont" style="background: #f4f4f4;width: 80%;margin: 0 auto;padding: 5px;height: auto">
+            <div>
+                <span class="left">商品编号</span> <span style="font-size: 16px;">{{list.pro_number}}</span>
+            </div>
+            <div>
+                <span class="left">商品分类</span> <span style="font-size: 16px;">{{list.cat_name}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="detail">
+        <!--<img class="img-ks-lazyload wxParse-img" style="width: 100%"-->
+        <!--src="https://img.alicdn.com/imgextra/i1/1714128138/TB2.Q9klrBnpuFjSZFGXXX51pXa-1714128138.jpg">-->
+        <!--<img class="img-ks-lazyload wxParse-img" style="width: 100%"-->
+        <!--src="https://img.alicdn.com/imgextra/i1/1714128138/TB2.Q9klrBnpuFjSZFGXXX51pXa-1714128138.jpg">-->
+        <!--<img class="img-ks-lazyload wxParse-img" style="width: 100%"-->
+        <!--src="https://img.alicdn.com/imgextra/i3/1714128138/TB2XZ9QlyRnpuFjSZFCXXX2DXXa-1714128138.jpg">-->
+        <!--<img class="img-ks-lazyload wxParse-img" style="width: 100%" v-bind:src="item">-->
+    </div>
+
+
+    <div class="common-problem">
+        <div class="h">
+            <div class="line"></div>
+            <span class="title">
+            常见问题
+            </span>
+        </div>
+
+
+        <div class="b">
+            <div class="item">
+                <div class="question-box">
+                    <span class="spot"></span>
+                    <span class="question">
+                    购买运费如何收取？
+                    </span>
+                </div>
+                <div class="answer">单笔订单金额（不含运费）满88元免邮费；不满88元，每单收取10元运费。 (港澳台地区需满500元免邮费；不满500元，每单收取30元运费)</div>
+                <div class="question-box">
+                    <span class="spot"></span>
+                    <span class="question">
+                    网易商城的订单如何配送？
+                    </span>
+                </div>
+                <div class="answer">网易商城会根据商品所在地、顾客所在地和商品的尺寸重量优选物流配送商，确保优质用户体验。目前暂不支持自选快递，具体物流信息可在下单成功后“我的订单-追踪物流”中查看。
+                </div>
+                <div class="question-box">
+                    <span class="spot"></span>
+                    <span class="question">
+                    如何申请退换货？
+                    </span>
+                </div>
+                <div class="answer">1.自收到商品之日起30日内，顾客可申请无忧退货；如果是退货，退款将原路返还，不同的银行处理时间不同，预计1-5个工作日到账；
+                    2.内裤和食品等特殊商品无质量问题不支持退换货； 3.退货流程： 确认收货-申请退货-客服审核通过-用户寄回商品-仓库签收验货-退款审核-退款完成； 4.换货流程：
+                    确认收货-申请换货-客服审核通过-用户寄回商品-仓库签收验货-客服确认-换货完成；
+                    5.退换货运费由网易商城承担。上门取件费用由网易商城统一与快递服务商结算，顾客只需将退换货商品交给上门取件快递员寄回。如顾客选择自行寄回商品，请先垫付运费，到货验证商品后，商城将以现金券形式为用户报销运费，不接受单方面到付件。
+                </div>
+                <div class="question-box">
+                    <span class="spot"></span>
+                        <span class="question">
+                        如何开具发票？
+                        </span>
+                </div>
+                <div class="answer">
+                    1.请在下单时选择“我要开发票”并填写相关信息（APP仅限2.4.0及以上版本）。开具增值税专用发票需在下单时填写增票资质信息。温馨提示：请确保增票资质信息与贵司税务登记证信息一致，避免因开票信息错误给贵司带来损失。
+                    2.可选开票内容： 订单中含有办公用品（箱包、文具、口罩）--办公用品、耗材、日用品、家居用品、食品、酒/饮料、服饰、化妆品； 不含有办公用品--日用品、家居用品、食品、酒/饮料、服饰、化妆品；
+                    订单商品为礼品卡--预付卡。 3.增值税专用发票开具内容为明细。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ft_nav">
+    <div class="goods-shouzan" onclick="collection()"></div>
+    <div class="goods-home"></div>
+    <div class="bug-price">
+        <div class="div bug-type" onclick="go_buy()">立即购买</div>
+    </div>
+    <div class="bug-price pj">
+        <div class="div bug-type" onclick="addShopCart()">加入购物车</div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+    var data_list = "";
+    (function () {
+        vm = new Vue({
+            el: '#cont',
+            data: {
+                list: [],
+                banneritem: []
+            }
+        });
+    })();
+
+    var ceshiUrl = 'https://yanxuanshop.banband.net/index.php?s=';
+    function addShopCart() { //添加到购物车
+        $.ajax({
+            url: ceshiUrl + '/Api/Shopping/add',
+            method: 'post',
+            dataType: "json",
+            data: {
+                uid: 11111,
+                pid: id,
+                num: 1
+            },
+            success: function (res) {
+                if (res.status == 1) {
+                    api.toast({
+                        msg: '加入购物车成功',
+                        duration: 2000,
+                        location: 'bottom'
+                    });
+
+                } else {
+                    api.toast({
+                        msg: data.err,
+                        duration: 2000,
+                        location: 'bottom'
+                    });
+                }
+            }
+        });
+    }
+
+    var id = 0;
+    apiready = function () {
+        id = api.pageParam['id'];
+        get_data(id);
+    };
+
+
+    function get_data(id) {
+        var url = ceshiUrl + '/Api/Product/index';
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url,
+            data: {
+                pro_id: id
+            },
+            success: function (data) {
+                var pro = data.pro;
+                vm.list = pro;
+                vm.banneritem = pro.img_arr;
+                $(".detail").html(pro.content);
+            }
+        });
+    }
+
+
+    function go_buy() {
+        api.openFrame({
+            name: 'go_buy',
+            url: '../html/go_buy.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                w: 'auto'
+            }
+        });
+    }
+
+    function go_listdetail() {
+        api.openFrame({
+            name: 'listdetail',
+            url: '../html/listdetail.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+
+    (function () {
+        mui.init({
+            swipeBack: true //启用右滑关闭功能
+        });
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval: 100//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+    })();
+
+    function goback() {
+        api.closeFrame({name: 'goods_detail'});
+    }
+
+    function collection() {
+        api.toast({
+            msg: '收藏成功',
+            duration: 2000,
+            location: 'bottom'
+        });
+    }
+    function add_goods() {
+        api.toast({
+            msg: '加入购物车成功',
+            duration: 2000,
+            location: 'bottom'
+        });
+    }
+</script>
+</html>

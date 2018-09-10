@@ -1,0 +1,171 @@
+body {
+    height: 100%;
+}
+
+.container {
+    background: #f9f9f9;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    height: 44px;
+    padding: 0 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.search .input {
+    width: 100%;
+    height: 23px;
+    background: #ededed;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search .icon {
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png) center no-repeat;
+    background-size: 100%;
+    width: 14px;
+    height: 14px;
+}
+
+.search .txt {
+    height: 21px;
+    line-height: 21px;
+    color: #666;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+.catalog {
+    flex: 1;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    border-top: 1px solid #fafafa;
+}
+
+.catalog .nav {
+    width: 81px;
+    height: 100%;
+}
+
+.catalog .nav .item {
+    text-align: center;
+    line-height: 45px;
+    width: 81px;
+    height: 45px;
+    color: #333;
+    font-size: 14px;
+    border-left: 3px solid #fff;
+}
+
+.catalog .nav .item.active {
+    color: #ab2b2b;
+    font-size: 18px;
+    border-left: 3px solid #ab2b2b;
+}
+
+
+.catalog .cate {
+    border-left: 1px solid #fafafa;
+    flex: 1;
+    height: 100%;
+    padding: 0 15px 0 15px;
+}
+
+.banner {
+    display: block;
+    height: 111px;
+    width: 100%;
+    position: relative;
+}
+
+.banner .img {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    border-radius: 2px;
+    height: 96px;
+    width: 100%;
+}
+
+.banner .txt {
+    position: absolute;
+    top: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    left: 0;
+    height: 96px;
+    line-height: 96px;
+    width: 100%;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.catalog .hd {
+    height: 54px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog .hd .txt {
+    font-size: 12px;
+    text-align: center;
+    color: #333;
+    padding: 0 5px;
+    width: auto;
+}
+
+.catalog .hd .line {
+    width: 20px;
+    height: 1px;
+    background: #d9d9d9;
+}
+
+.catalog .bd {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.catalog .bd .item {
+    display: block;
+    float: left;
+    height: 108px;
+    width: 72px;
+    margin-right: 8px;
+}
+
+.catalog .bd .item.last {
+    margin-right: 0;
+}
+
+.catalog .bd .item .icon {
+    height: 72px;
+    width: 72px;
+}
+
+.catalog .bd .item .txt {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    height: 36px;
+    width: 72px;
+}

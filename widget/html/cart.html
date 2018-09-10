@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>购物车</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/cart.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/jq.min.js"></script>
+    <script type="text/javascript" src="../script/vue.min.js"></script>
+    <style>
+        html, body {
+            -webkit-touch-callout: none;
+            -webkit-text-size-adjust: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-user-select: none;
+            background-color: #f4f4f4 !important;
+        }
+    </style>
+</head>
+<body style="background:#f4f4f4 !important;">
+<div class="container">
+    <div class="sort">
+        <div class="sort-box">
+            <div class="service-policy">
+                <div class="item">30天无忧退货</div>
+                <div class="item">48小时快速退款</div>
+                <div class="item">满88元免邮费</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="no-cart" style="display: none;">
+        <div class="c">
+            <img src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png">
+                <span>
+                    去添加点什么吧
+                </span>
+        </div>
+    </div>
+
+    <div class="cart-view" id="app">
+        <div class="list">
+            <div class="group-item">
+                <div class="goods">
+                    <div class="item edit" data-title="素面爆米花底男/女休闲鞋" id="69">
+                        <div class="checkbox" id="che" data-index="0"
+                             onclick="add_checkbox()"></div>
+                        <div class="cart-goods">
+                            <image class="img" mode="aspectFill"
+                                   src="https://yanxuanshop.banband.net/Data/UploadFiles/product/20170526/1495764457604174.jpg"></image>
+                            <div class="info">
+                                <div class="t">
+                                    <span class="name">
+                                    素面爆米花底男/女休闲鞋
+                                    </span>
+                                </div>
+                                <div class="attr">已选择：</div>
+                                <div class="b">
+                                        <span class="price">
+                                        ￥95.00
+                                        </span>
+
+                                    <div class="selnum">
+                                            <span class="modal-close" data-cartid="69" onclick="close_good()">
+                                            x
+                                            </span>
+
+                                        <div class="cut" data-cartid="69" data-index="0" onclick="jian()">-</div>
+                                        <input class="number" id="add" type="number" value="1">
+
+                                        <div class="add" data-cartid="69" data-index="0" onclick="add()">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-bottom">
+                <div class="checkbox" onclick="add_checkbox()">全选</div>
+                <div class="total">¥ 0</div>
+                <div class="checkout" onclick="go_buy();">下单</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    apiready = function () {
+        var windheight = window.innerHeight;
+        $api.css($api.dom('body'), 'height: ' + windheight + 'px;');
+    };
+    (function () {
+        vm = new Vue({
+            el: '#cont',
+            data: {
+                carts: []
+            }
+        });
+    })();
+
+//    bindMinus();
+    var ceshiUrl = 'https://yanxuanshop.banband.net/index.php?s=';
+    function bindMinus() {
+        $.ajax({
+            url: ceshiUrl + '/Api/Shopping/index',
+            method: "POST",
+            data: {},
+            success: function (res) {
+                var cart = res.cart;
+                vm.carts = cart;
+                alert(JSON.stringify(cart))
+            },
+            error: function (e) {
+                alert(JSON.stringify(e))
+            }
+        })
+    }
+
+    function add_checkbox() {
+        if ($(".checkbox").hasClass('checked')) {
+            $(".checkbox").removeClass('checked');
+        } else {
+            $(".checkbox").addClass('checked');
+        }
+    }
+
+    function close_good() {
+        api.confirm({
+            title: '提示框',
+            msg: '您确定要删除此条纪录吗？',
+            buttons: ['确定', '取消']
+        }, function (ret, err) {
+            var index = ret.buttonIndex;
+        });
+    }
+
+    function add() {
+        $("#add").val(parseInt($("#add").val()) + 1);
+    }
+
+    function jian() {
+        if (parseInt($("#add").val()) > 0) {
+            $("#add").val(parseInt($("#add").val()) - 1);
+        }
+    }
+    function go_buy() {
+        api.openFrame({
+            name: 'go_buy',
+            url: '../html/go_buy.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                w: 'auto'
+            }
+        });
+    }
+    function goback() {
+        api.closeFrame({name: 'listdetail'});
+    }
+</script>
+</html>

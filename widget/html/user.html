@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/user.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        function go_listorder() {
+            api.openFrame({
+                name: 'dingdan',
+                url: '../html/dingdan.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    // y: headerH,
+                    w: 'auto'
+                    // h: frameH
+                }
+            });
+        }
+        function go_add_address() {
+            api.openFrame({
+                name: 'user_add_address',
+                url: '../html/user_add_address.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+        function go_feedback() {
+            api.openFrame({
+                name: 'feedback',
+                url: '../html/feedback.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+        function go_daifahuo() {
+            api.openFrame({
+                name: 'daifahuo',
+                url: '../html/daifahuo.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+        function go_daishouhuo() {
+            api.openFrame({
+                name: 'daishouhuo',
+                url: '../html/daishouhuo.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+        function go_success() {
+            api.openFrame({
+                name: 'success',
+                url: '../html/success.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+        function go_synopsis(){
+            api.openFrame({
+                name: 'synopsis',
+                url: '../html/synopsis.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+        function go_shoucang(){
+            api.openFrame({
+                name: 'shoucang',
+                url: '../html/shoucang.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+        function go_tuikuan(){
+            api.openFrame({
+                name: 'tuikuan',
+                url: '../html/tuikuan.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+        function go_rituall(){
+            api.openFrame({
+                name: 'rituall',
+                url: '../html/rituall.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    w: 'auto'
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="profile-info">
+        <div>
+            <image class="avatar" src="../image/herder.jpg"></image>
+            <div class="info">
+                <span class="name">青衣人</span>
+            </div>
+        </div>
+        <!--<div>-->
+            <!--<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">马上登录</button>-->
+        <!--</div>-->
+    </div>
+
+
+    <div class="user-menu">
+        <div class="item" onclick="go_listorder()">
+            <div url="../user/dingdan?currentTab=0" class="a">
+                <span class="icon order"></span>
+                <span class="txt">待付款订单</span>
+            </div>
+        </div>
+        <div class="item" onclick="go_daifahuo()">
+            <div url="../user/daifahuo?currentTab=0" class="a">
+                <span class="icon order"></span>
+                <span class="txt">待发货订单</span>
+            </div>
+        </div>
+        <div class="item" style="border-right:1px solid #ffffff;" onclick="go_daishouhuo()">
+            <div url="../user/daishouhuo?currentTab=0" class="a">
+                <span class="icon order"></span>
+                <span class="txt">待收货订单</span>
+            </div>
+        </div>
+        <div class="item" onclick="go_success();">
+            <div url="../user/success?currentTab=0" class="a">
+                <span class="icon order"></span>
+                <span class="txt">已完成订单</span>
+            </div>
+        </div>
+        <div class="item" onclick="go_feedback();">
+            <div url="../user/feedback" class="a">
+                <span class="icon coupon"></span>
+                <span class="txt">用户反馈</span>
+            </div>
+        </div>
+        <div class="item no-border"  onclick="go_success();">
+            <div url="../user/dingdan?currentTab=3&otype=finish" class="a">
+                <span class="icon gift"></span>
+                <span class="txt">已完成订单</span>
+            </div>
+        </div>
+        <div class="item"  onclick="go_shoucang();">
+            <div url="../user/shoucang" class="a">
+                <span class="icon address"></span>
+                <span class="txt">我的收藏</span>
+            </div>
+        </div>
+        <div class="item" onclick="go_synopsis()">
+            <div url="../qyzz/qyzz" class="a">
+                <span class="icon security"></span>
+                <span class="txt">互微资质</span>
+            </div>
+        </div>
+        <div class="item no-border" onclick="go_tuikuan();">
+            <div url="../user/shouhou?currentTab=0" class="a">
+                <span class="icon kefu"></span>
+                <span class="txt">退款售后</span>
+            </div>
+        </div>
+        <div class="item" onclick="go_add_address();">
+            <div url="../address/user-address/user-address" class="a">
+                <span class="icon address"></span>
+                <span class="txt">地址管理</span>
+            </div>
+        </div>
+        <div class="item" onclick="go_synopsis()">
+            <div url="../synopsis/synopsis" class="a">
+                <span class="icon security"></span>
+                <span class="txt">关于我们</span>
+            </div>
+        </div>
+        <div class="item no-border" onclick="go_rituall()">
+            <div url="../rituall/rituall" class="a">
+                <span class="icon kefu"></span>
+                <span class="txt">我的卡券</span>
+            </div>
+        </div>
+        <div class="item item-bottom">
+            <div url="../events/events" class="a">
+                <span class="icon help"></span>
+                <span class="txt">活动信息</span>
+            </div>
+        </div>
+        <div class="item item-bottom" onclick="go_feedback();">
+            <div url="../user/feedback" class="a">
+                <span class="icon feedback"></span>
+                <span class="txt">意见反馈</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="logout" bindtap="exitLogin">互微商城版权所有</div>
+</body>
+</html>

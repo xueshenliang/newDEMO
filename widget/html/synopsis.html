@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>关于我们</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/dingdan.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+</head>
+<body>
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">关于我们</span>
+    </div>
+</div>
+
+<div class="container" style="padding-top: 50px;">
+   <span>东莞荔枝商城由东莞市互微网络科技有限公司研发</span>
+</div>
+
+
+</body>
+<script type="text/javascript">
+    function goback() {
+        api.closeFrame({name: 'synopsis'});
+    }
+</script>
+</html>

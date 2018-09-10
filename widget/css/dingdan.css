@@ -1,0 +1,117 @@
+page{
+    height: 100%;
+    width: 100%;
+    background: #f4f4f4;
+}
+
+.orders{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.order{
+    margin-top: 10px;
+    background: #fff;
+}
+
+.order .h{
+    height: 41px;
+    line-height: 41px;
+    margin-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid #f4f4f4;
+    font-size: 15px;
+    color: #333;
+}
+
+.order .h .l{
+    float: left;
+}
+
+.order .h .r{
+    float: right;
+    color: #b4282d;
+    font-size: 12px;
+}
+
+.order .goods{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    margin-left: 16px;
+}
+
+.order .goods .img{
+    height:100px;
+    width:24%;
+    background: #f4f4f4;
+}
+
+.order .goods .img img{
+    height:100%;
+    width:100%;
+}
+
+.order .goods .info{
+    height: 72px;
+    flex: 1;
+    padding-left: 10px;
+}
+
+.order .goods .name{
+    margin-top: 0px;
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    color: #333;
+    font-size: 15px;
+}
+
+.order .goods .number{
+    display: block;
+    height: 18px;
+    line-height: 18px;
+    color: #666;
+    font-size: 13px;
+	margin-top:31px;
+
+}
+
+.order .goods .status{
+    width:50px;
+    color: #b4282d;
+    font-size: 12px;
+}
+
+.order .b{
+    height: 51px;
+    line-height: 51px;
+    margin-left: 16px;
+    padding-right: 16px;
+    border-top: 1px solid #f4f4f4;
+    font-size: 15px;
+    color: #333;
+}
+
+.order .b .l{
+    float: left;
+}
+
+.order .b .r{
+    float: right;
+}
+
+.order .b .btn{
+    margin-top: 10px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    padding: 0 10px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #fff;
+    background:#b4282d;
+    float:left;
+    margin-right:5px;
+}

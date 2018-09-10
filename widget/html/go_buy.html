@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>订单确认</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/go_buy.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <style>
+        .empty {
+            text-align: center;
+            padding: 120px 0;
+        }
+    </style>
+</head>
+<body>
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">订单确认</span>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="address-box">
+        <div class="address-item address-empty" onclick="go_add_address()">
+            <div class="m"> 还没有收货地址，去添加</div>
+            <div class="r">
+                <img src="../image/address_right.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="order-box">
+        <div class="order-item">
+            <div class="l">
+                <span class="name">
+                商品合计
+                </span>
+            </div>
+            <div class="r">
+                <span class="txt">
+                ￥0
+                </span>
+            </div>
+        </div>
+        <div class="order-item">
+            <div class="l">
+                <span class="name">
+                运费
+                </span>
+            </div>
+            <div class="r">
+                <span class="txt">
+                ￥
+                </span>
+            </div>
+        </div>
+        <div class="order-item no-border">
+            <div class="l">
+                <span class="name">
+                优惠券
+                </span>
+            </div>
+            <div class="r">
+                <span class="txt">
+                -￥0
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="goods-items"></div>
+
+    <div class="order-total">
+        <div class="l">实付：￥0</div>
+        <div class="r" style="background-color: #1AAD16;color:#FFFFFF;" onclick="go_add_address()">请先添加收货地址</div>
+    </div>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+    function goback() {
+        api.closeFrame({name: 'go_buy'});
+    }
+    function go_add_address() {
+        api.openFrame({
+            name: 'add_address',
+            url: '../html/add_address.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                w: 'auto'
+            }
+        });
+    }
+</script>
+
+</html>

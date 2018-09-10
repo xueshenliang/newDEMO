@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>列表详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/listdetail.css"/>
+
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/jq.min.js"></script>
+    <script type="text/javascript" src="../script/vue.min.js"></script>
+</head>
+<body style="background: #f4f4f4;">
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">详情</span>
+    </div>
+</div>
+
+<div class="container" id="cont">
+    <div class="sort">
+        <div class="sort-box">
+            <div class="service-policy">
+                <div class="item">30天无忧退货</div>
+                <div class="item">48小时快速退款</div>
+                <div class="item">满88元免邮费</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bx">
+
+        <div class="goodlist" v-for="item in list" @click="go_detail(item.id)">
+            <img class="img" v-bind:src="item.photo_x">
+
+            <div class="mt">
+                <div style="text-align: center;">
+                    <span class="name">{{item.name}}</span>
+                </div>
+                <div style="text-align: center;">
+                     <span class="price">
+                       ￥{{item.price_yh}}
+                     </span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+</body>
+<script type="text/javascript">
+    (function () {
+        vm = new Vue({
+            el: '#cont',
+            data: {
+                list: []
+            }
+        });
+    })();
+
+    apiready = function () {
+        var id = api.pageParam['id'];
+        var sign = api.pageParam['sign'];
+        if (sign == 1) {
+            var data = {cat_id: id};
+        }else{
+            var data = {brand_id: id};
+        }
+        get_data(data);
+    };
+
+    var ceshiUrl = 'https://yanxuanshop.banband.net/index.php?s=';
+    function get_data(data) {
+        $.ajax({
+            url: ceshiUrl + '/Api/Product/lists',
+            method: 'post',
+            data: data,
+            dataType: "json",
+            success: function (res) {
+                vm.list = res.pro;
+            }
+        })
+    }
+
+    function goback() {
+        api.closeFrame({name: 'listdetail'});
+    }
+
+    function go_detail(id) {
+        api.openFrame({
+            name: 'goods_detail',
+            url: '../html/goods_detail.html',
+            bounces: false,
+            pageParam: {id: id},
+            rect: {
+                x: 0,
+                // y: headerH,
+                w: 'auto'
+                // h: frameH
+            }
+        });
+    }
+</script>
+</html>

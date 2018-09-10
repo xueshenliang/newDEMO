@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的代付款订单</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/order_detail.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/jq.min.js"></script>
+    <script type="text/javascript" src="../script/vue.min.js"></script>
+</head>
+<body style="background: #f4f4f4;">
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">订单详情</span>
+    </div>
+</div>
+
+
+<div class="container" style="padding-top: 50px;" id="app">
+    <div class="order-info">
+        <div class="item-a">订单状态：{{list.order_status}}</div>
+        <div class="item-a">下单时间：{{list.addtime}}</div>
+        <div class="item-b">订单编号：{{list.order_sn}}</div>
+        <div class="item-c">
+            <div class="l">实付：<span class="cost">￥{{list.price}}</span></div>
+            <div class="r">
+                <div class="btn">取消订单</div>
+                <div class="btn active">去付款</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-goods">
+        <div class="h">
+            <div class="label">商品信息</div>
+            <!--<div class="status">{{orderInfo.order_status_span}}</div>-->
+        </div>
+        <div class="goods">
+            <div class="item" v-for="item in proData">
+                <div class="img">
+                    <img v-bind:src="item.photo_x">
+                </div>
+                <div class="info">
+                    <div class="t">
+                        <span class="name">{{item.name}}</span>
+                        <span class="number">x{{item.num}}</span>
+                    </div>
+                    <div class="attr">{{item.goods_specifition_name_value}}</div>
+                    <div class="price">￥{{item.price}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-bottom">
+        <div class="address">
+            <div class="t">
+                <span class="name">{{list.receiver}}</span>
+                <span class="mobile">{{list.tel}}</span>
+            </div>
+            <div class="b">{{list.address_xq}}</div>
+        </div>
+        <div class="total">
+            <div class="t">
+                <span class="label">商品合计：</span>
+                <span class="txt">￥{{list.price}}</span>
+            </div>
+            <!--<div class="t" v-if="{{list.order_status=='待收货'}}">-->
+                <!--<span class="label">运费：</span>-->
+                <!--<span class="txt">￥{{orderInfo.freight_price}}</span>-->
+            <!--</div>-->
+        </div>
+        <div class="pay-fee"></div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+
+    var ceshiUrl = 'https://yanxuanshop.banband.net/index.php?s=';
+    (function () {
+        vm = new Vue({
+            el: '#app',
+            data: {
+                list: [],
+                proData: []
+            }
+        });
+    })();
+
+    apiready = function () {
+        var id = api.pageParam['id'];
+        getlist(id);
+    };
+
+    function getlist(id) {
+        var url = ceshiUrl + '/Api/Order/order_details';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+                order_id: id
+            },
+            dataType: "json",
+            success: function (data) {
+                vm.list = data.ord;
+                vm.proData = data.pro;
+//                alert(JSON.stringify(vm.proData));
+            }
+        });
+    }
+    function goback() {
+        api.closeFrame({name: 'order_detail'});
+    }
+</script>
+</html>

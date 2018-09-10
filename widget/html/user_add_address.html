@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>地址管理</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/heard.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/add_address.css"/>
+    <script type="text/javascript" src="../script/api.js"></script>
+</head>
+<body style="background: #f4f4f4;">
+<!--顶部标题栏-->
+<div class="header" id="topbar">
+    <div class="left" tapmode onclick="goback()">
+        <img src="../image/fhui.png" alt="" class="logoleft">
+    </div>
+    <div class="t">
+        <span class="title">地址管理</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="address">
+        <div class="address-icon">
+            <radio checked="" value="0"></radio>
+        </div>
+        <div class="address-detail" style="position: relative;">
+            <div class="address-name-phone">
+                    <span class="address-name">
+                    李浩
+                    </span>
+                    <span class="address-phone">
+                    18026481150
+                    </span>
+            </div>
+            <div class="address-info">北京 北京 东城区</div>
+            <div class="address-edit" style="position: relative;left: 8%">
+                <div>
+                    <icon></icon>
+                </div>
+                <div>
+                        <span>
+                        设置默认
+                        </span>
+                        <span>
+                        |
+                        </span>
+                        <span>
+                        删除
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-address" style="border: 1px solid #f4f4f4;" onclick="go_filling_address();">
+        <div class="add-address-icon"></div>
+        <div>新增地址</div>
+    </div>
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+    function go_filling_address(){
+        api.openFrame({
+            name: 'filling_address',
+            url: '../html/filling_address.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                w: 'auto'
+            }
+        });
+    }
+    function goback() {
+        api.closeFrame({name: 'user_add_address'});
+    }
+</script>
+</html>

@@ -1,0 +1,155 @@
+body{
+    height: 100%;
+    width: 100%;
+    background: #f4f4f4;
+}
+.container{
+    background: #f4f4f4;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+.profile-info{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
+    background: #b4a078;
+}
+
+.profile-info .avatar{
+    height: 74px;
+    width: 74px;
+    border-radius: 50%;
+    margin-top: 8%;
+}
+
+.profile-info .info{
+    flex: 1;
+    padding-left: 16px;
+}
+
+.profile-info .name{
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.profile-info .level{
+    display: block;
+    height: 15px;
+    line-height: 15px;
+    margin-bottom: 5px;
+    color: #7f7f7f;
+    font-size: 15px;
+}
+
+.user-menu{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+   /* justify-content: center;
+    align-items: center;*/
+    flex-wrap: wrap;
+
+}
+
+.user-menu .item{
+ /*   float: left;*/
+    width: 32.99%;
+    height: 93px;
+    border-right: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.user-menu .item .a{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-menu .item.no-border {
+    border-right: 0;
+}
+
+.user-menu .item.item-bottom {
+    border-bottom: none;
+}
+
+.user-menu .icon{
+    margin: 0 auto;
+    display: block;
+    height: 26px;
+    width: 26px;
+    margin-bottom: 8px;
+}
+
+.user-menu .icon.order{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-sdf6a55ee56-f2c2b9c2f0.png) 0 -216px no-repeat;
+    background-size: 26px;
+}
+
+.user-menu .icon.coupon{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-sdf6a55ee56-f2c2b9c2f0.png) 0 -31px no-repeat;
+    background-size: 26px;
+}
+
+.user-menu .icon.gift{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-sdf6a55ee56-f2c2b9c2f0.png) 0 -93px no-repeat;
+    background-size: 26px;
+}
+
+.user-menu .icon.address{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-sdf6a55ee56-f2c2b9c2f0.png) 0 0 no-repeat;
+    background-size: 26px;
+}
+
+.user-menu .icon.security{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-sdf6a55ee56-f2c2b9c2f0.png) 0 -250px no-repeat;
+    background-size: 26px;
+}
+
+.user-menu .icon.kefu{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-sdf6a55ee56-f2c2b9c2f0.png) 0 -156px no-repeat;
+    background-size: 26px;
+}
+
+.user-menu .icon.help{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-sdf6a55ee56-f2c2b9c2f0.png) 0 -125px no-repeat;
+    background-size: 26px;
+}
+
+.user-menu .icon.feedback{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-sdf6a55ee56-f2c2b9c2f0.png) 0 -63px no-repeat;
+    background-size: 26px;
+}
+
+
+.user-menu .txt{
+    display: block;
+    height: 12px;
+    width: 100%;
+    font-size: 12px;
+    color:#333;
+}
+
+.logout{
+    margin-top: 25px;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+}
