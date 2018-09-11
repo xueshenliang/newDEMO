@@ -98,7 +98,7 @@
             </div>
         </div>
 
-        <div class="b">
+        <div class="b x">
 
             <div class="goodlist" v-for="item in newGoods" @click="go_detail(2,item.id)">
                 <img class="img" v-bind:src="item.photo_x">
@@ -120,7 +120,7 @@
             </div>
         </div>
 
-        <div class="h">
+        <div class="h" style="  border-bottom:2px solid #f4f4f4;">
             <div>
                 <span class="txt">人气推荐</span>
             </div>
@@ -161,7 +161,7 @@
         </div>
 
         <!--滚动-->
-        <div class="slide-box">
+        <div class="slide-box" style="padding-left: 1% !important;">
             <div class="slide-item" v-for="item in hotGoods" @click="go_detail(2,item.id)">
                 <img v-bind:src="item.photo_x">
 
@@ -196,7 +196,7 @@
             </div>
         </div>
 
-        <div class="b">
+        <div class="b s">
             <div class="goodlist" v-for="item in hotGoods" @click="go_detail(2,item.id)">
                 <img class="img" v-bind:src="item.photo_x">
 
@@ -209,14 +209,14 @@
             </div>
 
             <div class="goodlist more" onclick="more()">
-            <span>
-                更多好物
-            </span>
-                <img class="img" style="width: 30px;" src="../image/icon_go_more.png">
+                <div class="ss">
+                  更多好物
+                </div>
+                <div class="span">
+                      <img style="width: 30px;" src="../image/icon_go_more.png">
+                </div>
             </div>
-
         </div>
-
     </div>
 
 </div>
